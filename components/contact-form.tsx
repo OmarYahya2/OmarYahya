@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
+import { getApiUrl, API_CONFIG } from "@/lib/config";
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,7 +31,11 @@ export function ContactForm() {
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/contact/", {
+      const apiUrl = getApiUrl(API_CONFIG.ENDPOINTS.CONTACT);
+      console.log('Sending request to:', apiUrl);
+      console.log('Form data:', formData);
+
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,13 +44,20 @@ export function ContactForm() {
         body: JSON.stringify(formData),
       });
 
+      console.log('Response status:', response.status);
+      
       if (response.ok) {
+        const result = await response.json();
+        console.log('Success response:', result);
         setSubmitStatus("success");
         (e.target as HTMLFormElement).reset();
       } else {
-        throw new Error("Failed to send message");
+        const errorData = await response.text();
+        console.error('Error response:', errorData);
+        throw new Error(`Failed to send message: ${response.status}`);
       }
     } catch (error) {
+      console.error('Contact form error:', error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
