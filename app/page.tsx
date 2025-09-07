@@ -1,14 +1,25 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Navbar } from "@/components/navbar"
-import { TypingAnimation } from "@/components/typing-animation"
-import { ContactForm } from "@/components/contact-form"
-import { ScrollToTop } from "@/components/scroll-to-top"
-import { Github, Linkedin, Instagram, Facebook, Code, Smartphone, Brain, Mail, MapPin, Phone } from "lucide-react"
-import Image from "next/image"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Navbar } from "@/components/navbar";
+import { TypingAnimation } from "@/components/typing-animation";
+import { ContactForm } from "@/components/contact-form";
+import { ScrollToTop } from "@/components/scroll-to-top";
+import {
+  Github,
+  Linkedin,
+  Instagram,
+  Facebook,
+  Code,
+  Smartphone,
+  Brain,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
@@ -16,7 +27,10 @@ export default function HomePage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-16 sm:pt-20">
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center px-4 pt-16 sm:pt-20"
+      >
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Hero Text */}
@@ -30,14 +44,19 @@ export default function HomePage() {
               <div className="text-lg sm:text-xl md:text-2xl text-muted-foreground">
                 I'm a{" "}
                 <TypingAnimation
-                  texts={["Web Developer", "AI Enthusiast", "Problem Solver", "Computer Engineering Student"]}
+                  texts={[
+                    "Web Developer",
+                    "AI Enthusiast",
+                    "Problem Solver",
+                    "Computer Engineering Student",
+                  ]}
                   className="text-secondary font-semibold"
                 />
               </div>
 
               <p className="text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed mx-auto lg:mx-0">
-                Computer engineering student at Birzeit University with a passion for learning and developing new
-                technologies.
+                Computer engineering student at Birzeit University with a
+                passion for learning and developing new technologies.
               </p>
 
               {/* Social Links */}
@@ -79,7 +98,11 @@ export default function HomePage() {
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-3 text-base sm:text-lg w-full sm:w-auto transition-all duration-300 hover:shadow-lg active:scale-95"
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 Get in Touch
               </Button>
@@ -111,7 +134,9 @@ export default function HomePage() {
       <section id="about" className="py-16 sm:py-20 px-4 bg-card">
         <div className="container mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">About Me</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+              About Me
+            </h2>
             <div className="w-16 sm:w-20 h-1 bg-primary mx-auto"></div>
           </div>
 
@@ -120,15 +145,25 @@ export default function HomePage() {
             <Card className="shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-6 sm:p-8">
                 <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
-                  I'm a computer engineering student at Birzeit University with a passion for learning and developing
-                  new technologies. I have experience with HTML, CSS, and Java, and I'm constantly expanding my
-                  knowledge in the field of programming and software development.
+                  I'm a computer engineering student at Birzeit University with
+                  a passion for learning and developing new technologies. I have
+                  experience with HTML, CSS, and Java, and I'm constantly
+                  expanding my knowledge in the field of programming and
+                  software development.
                 </p>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg sm:text-xl font-semibold text-foreground">Skills</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground">
+                    Skills
+                  </h3>
                   <div className="flex flex-wrap gap-2 sm:gap-3">
-                    {["HTML", "CSS", "Java", "Web Development", "Problem Solving"].map((skill) => (
+                    {[
+                      "HTML",
+                      "CSS",
+                      "Java",
+                      "Web Development",
+                      "Problem Solving",
+                    ].map((skill) => (
                       <Badge
                         key={skill}
                         variant="secondary"
@@ -145,7 +180,9 @@ export default function HomePage() {
             {/* Interests */}
             <Card className="shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="pb-4">
-                <CardTitle className="text-lg sm:text-xl font-semibold text-secondary text-center">Interests</CardTitle>
+                <CardTitle className="text-lg sm:text-xl font-semibold text-secondary text-center">
+                  Interests
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 sm:space-y-4">
                 {[
@@ -159,9 +196,14 @@ export default function HomePage() {
                     className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-muted rounded-lg hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:translate-x-1 sm:hover:translate-x-2 active:scale-95 cursor-pointer"
                   >
                     <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary flex items-center justify-center flex-shrink-0">
-                      <interest.icon size={16} className="sm:w-[18px] sm:h-[18px] text-primary-foreground" />
+                      <interest.icon
+                        size={16}
+                        className="sm:w-[18px] sm:h-[18px] text-primary-foreground"
+                      />
                     </div>
-                    <span className="font-medium text-sm sm:text-base">{interest.text}</span>
+                    <span className="font-medium text-sm sm:text-base">
+                      {interest.text}
+                    </span>
                   </div>
                 ))}
               </CardContent>
@@ -174,10 +216,13 @@ export default function HomePage() {
       <section id="services" className="py-16 sm:py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">What I Do</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+              What I Do
+            </h2>
             <div className="w-16 sm:w-20 h-1 bg-primary mx-auto mb-4 sm:mb-6"></div>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              I focus on creating modern, efficient solutions using the latest technologies
+              I focus on creating modern, efficient solutions using the latest
+              technologies
             </p>
           </div>
 
@@ -186,19 +231,22 @@ export default function HomePage() {
               {
                 icon: Code,
                 title: "Web Development",
-                description: "Creating responsive and modern websites using the latest technologies.",
+                description:
+                  "Creating responsive and modern websites using the latest technologies.",
                 color: "bg-chart-1",
               },
               {
                 icon: Smartphone,
                 title: "Mobile Apps",
-                description: "Developing cross-platform mobile applications with modern frameworks.",
+                description:
+                  "Developing cross-platform mobile applications with modern frameworks.",
                 color: "bg-chart-2",
               },
               {
                 icon: Brain,
                 title: "AI Solutions",
-                description: "Implementing intelligent solutions using machine learning algorithms.",
+                description:
+                  "Implementing intelligent solutions using machine learning algorithms.",
                 color: "bg-chart-3",
               },
             ].map((service, index) => (
@@ -210,12 +258,17 @@ export default function HomePage() {
                   <div
                     className={`w-12 h-12 sm:w-16 sm:h-16 ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}
                   >
-                    <service.icon size={24} className="sm:w-8 sm:h-8 text-white" />
+                    <service.icon
+                      size={24}
+                      className="sm:w-8 sm:h-8 text-white"
+                    />
                   </div>
                   <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4 group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{service.description}</p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -227,10 +280,13 @@ export default function HomePage() {
       <section id="contact" className="py-16 sm:py-20 px-4 bg-card">
         <div className="container mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Get in Touch</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+              Get in Touch
+            </h2>
             <div className="w-16 sm:w-20 h-1 bg-primary mx-auto mb-4 sm:mb-6"></div>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Have a project in mind or want to collaborate? I'd love to hear from you!
+              Have a project in mind or want to collaborate? I'd love to hear
+              from you!
             </p>
           </div>
 
@@ -247,7 +303,8 @@ export default function HomePage() {
                 OmarYahya<span className="text-primary">.</span>
               </h3>
               <p className="text-background/80 mb-6 max-w-md mx-auto sm:mx-0 text-sm sm:text-base leading-relaxed">
-                Computer engineering student passionate about web development and AI technologies.
+                Computer engineering student passionate about web development
+                and AI technologies.
               </p>
               <div className="flex gap-3 sm:gap-4 justify-center sm:justify-start">
                 <a
@@ -290,11 +347,17 @@ export default function HomePage() {
             </div>
 
             <div className="text-center sm:text-left">
-              <h4 className="font-semibold mb-4 text-sm sm:text-base">Quick Links</h4>
+              <h4 className="font-semibold mb-4 text-sm sm:text-base">
+                Quick Links
+              </h4>
               <ul className="space-y-2 sm:space-y-3 text-background/80 text-sm sm:text-base">
                 <li>
                   <button
-                    onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() =>
+                      document
+                        .getElementById("home")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                     className="hover:text-primary transition-all duration-300 hover:translate-x-1 active:scale-95 py-1"
                   >
                     Home
@@ -302,7 +365,11 @@ export default function HomePage() {
                 </li>
                 <li>
                   <button
-                    onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() =>
+                      document
+                        .getElementById("about")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                     className="hover:text-primary transition-all duration-300 hover:translate-x-1 active:scale-95 py-1"
                   >
                     About
@@ -310,7 +377,11 @@ export default function HomePage() {
                 </li>
                 <li>
                   <button
-                    onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() =>
+                      document
+                        .getElementById("services")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                     className="hover:text-primary transition-all duration-300 hover:translate-x-1 active:scale-95 py-1"
                   >
                     Services
@@ -318,7 +389,11 @@ export default function HomePage() {
                 </li>
                 <li>
                   <button
-                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() =>
+                      document
+                        .getElementById("contact")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                     className="hover:text-primary transition-all duration-300 hover:translate-x-1 active:scale-95 py-1"
                   >
                     Contact
@@ -328,19 +403,21 @@ export default function HomePage() {
             </div>
 
             <div className="text-center sm:text-left">
-              <h4 className="font-semibold mb-4 text-sm sm:text-base">Contact Info</h4>
+              <h4 className="font-semibold mb-4 text-sm sm:text-base">
+                Contact Info
+              </h4>
               <ul className="space-y-2 sm:space-y-3 text-background/80 text-sm sm:text-base">
                 <li className="flex items-center gap-2 sm:gap-3 justify-center sm:justify-start">
                   <Mail size={16} className="flex-shrink-0" />
-                  <span className="break-all">omar@example.com</span>
+                  <span className="break-all">omar.yahya965@gmail.com</span>
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3 justify-center sm:justify-start">
                   <MapPin size={16} className="flex-shrink-0" />
-                  <span>Birzeit University</span>
+                  <span>Ramallah</span>
                 </li>
                 <li className="flex items-center gap-2 sm:gap-3 justify-center sm:justify-start">
                   <Phone size={16} className="flex-shrink-0" />
-                  <span>+970 XXX XXXX</span>
+                  <span>+972 595685822</span>
                 </li>
               </ul>
             </div>
@@ -357,5 +434,5 @@ export default function HomePage() {
       {/* Scroll to Top Button */}
       <ScrollToTop />
     </div>
-  )
+  );
 }
